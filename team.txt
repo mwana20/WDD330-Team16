@@ -1,13 +1,1 @@
-Rudy F. Pilande II
-<<<<<<< HEAD
-<<<<<<< HEAD
-Mubbala Phillip Kenneth
-Pius Mukisa
-Pual
-=======
-Mubbala Phillip Kenneth
->>>>>>> b15c37c97b3474b916fe3e0a78c7e8153a4d41f4
-=======
-Mubbala Phillip Kenneth
-sample name
->>>>>>> c9392ca5717c2124d5972b4e14b624eccb1b3de6
+Mubbala Phillip
