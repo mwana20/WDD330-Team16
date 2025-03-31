@@ -4,7 +4,7 @@ export default class ShoppingCart {
   constructor(key, parentSelector, templateElement) {
     this.key = key;
     this.parentSelector = parentSelector;
-    this.templateElement = templateElement;
+    this.templateElement = templateElement; // Reference to the <template> element
   }
 
   renderCartContents() {
@@ -16,8 +16,16 @@ export default class ShoppingCart {
   }
 
   prepareTemplate(template, item) {
-    template.querySelector(".cart-card__image img").src = item.Image;
-    template.querySelector(".cart-card__image img").alt = item.Name;
+    const imgElement = template.querySelector(".cart-card__image img");
+
+    // Change the image source based on screen width
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      imgElement.src = item.ImageSmall; // Use a smaller image for mobile
+    } else {
+      imgElement.src = item.Image; // Use the default image for larger screens
+    }
+
+    imgElement.alt = item.Name;
     template.querySelector(".card__name").textContent = item.Name;
     template.querySelector(".cart-card__color").textContent = item.Colors[0].ColorName;
     template.querySelector(".cart-card__quantity").textContent = `qty: 1`;
