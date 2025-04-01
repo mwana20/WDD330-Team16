@@ -18,14 +18,10 @@ export default class ShoppingCart {
   prepareTemplate(template, item) {
     const imgElement = template.querySelector(".cart-card__image img");
 
-    // Change the image source based on screen width
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      imgElement.src = item.ImageSmall; // Use a smaller image for mobile
-    } else {
-      imgElement.src = item.Image; // Use the default image for larger screens
-    }
-
+    // Use the specific tent image from the item data
+    imgElement.src = item.Image; // Ensure `item.Image` contains the correct tent image URL
     imgElement.alt = item.Name;
+
     template.querySelector(".card__name").textContent = item.Name;
     template.querySelector(".cart-card__color").textContent = item.Colors[0].ColorName;
     template.querySelector(".cart-card__quantity").textContent = `qty: 1`;

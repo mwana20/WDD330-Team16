@@ -114,21 +114,38 @@ button {
   border-bottom: 2px solid var(--primary-color);
 }
 
-/* End utility classes */
+
 
 /* Cart icon styles */
 .cart {
   padding-top: 1em;
   position: relative;
   text-align: center;
+  display: inline-block;
+  z-index: 10; /* Ensure it appears above other elements */
 }
 
 .cart svg {
-  width: 25px;
+  width: 40px; /* Adjust size as needed */
+  height: auto;
 }
 
 .cart:hover svg {
   fill: gray;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px; /* Adjust to position above the icon */
+  right: -5px; /* Adjust to position to the right */
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  line-height: 1;
+  z-index: 10; /* Ensure it appears above the cart icon */
 }
 
 /* End cart icon styles */
